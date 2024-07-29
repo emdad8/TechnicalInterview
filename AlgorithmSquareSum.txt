@@ -1,0 +1,36 @@
+ public static void SquareOne() {
+     Console.WriteLine("Enter num");
+     int number = Convert.ToInt32(Console.ReadLine());
+
+     HashSet<int> st = new HashSet<int>();
+     number= SquareSum(number);
+   
+     while (true)
+     {
+         if (number == 1) {
+             Console.WriteLine("The number reached to 1");
+             return;
+         }
+
+         if (st.Contains(number))
+         {
+             Console.WriteLine("The number does not reach to 1");
+             return;
+         }
+         st.Add(number);
+         
+     }
+
+ }
+
+  public static int SquareSum(int n) {
+
+      int count = 0;
+      while (n!=0) {
+
+          int digit = n % 10;
+          count += digit * digit;
+          n /= 10;
+      }
+      return count;
+  }
